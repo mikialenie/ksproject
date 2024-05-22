@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona Główna</title>
+    <link rel="stylesheet" href="stylesindex.css">
+</head>
+<body>
+    <header>
+        <h1>Witaj na stronie głównej</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index2.html">Strona główna</a></li>
+            <li><a href="page1.html">Galeria Zdjęć</a></li>
+            <li><a href="page2.html">Linki Kolei</a></li>
+            <li><a href="page3.html">Kontakt</a></li>
+            <li><a href="page4.html">Formularz Kontaktowy</a></li>
+        </ul>
+    </nav>
+
+    <h2 class="firsttext"><center>Wyszukaj i kup bilet</center></h2>
+
+</header>
+<main class="container">
+    <form action="#">
+        <div class="form-row">
+            <label for="start">Wpisz stację początkową, miasto:</label>
+            <input type="text" id="start" name="start" required>
+        </div>
+        <div class="form-row">
+            <label for="end">Wpisz stację końcową, miasto:</label>
+            <input type="text" id="end" name="end" required>
+        </div>
+        <div class="form-row">
+            <label for="date">Data podróży:</label>
+            <input type="date" id="date" name="date" value="2024-05-22" required>
+        </div>
+        <div class="form-row">
+            <label for="direct">Preferuj bez przesiadek:</label>
+            <input type="checkbox" id="direct" name="direct">
+        </div>
+        <div class="form-row">
+            <label for="online">Tylko bilet online:</label>
+            <input type="checkbox" id="online" name="online">
+        </div>
+        <div id="error-message" class="error-message">
+            <p>Wystąpił błąd, spróbuj ponownie później.</p>
+        </div>
+        <div class="form-row">
+            <button type="submit">Znajdź połączenie</button>
+        </div>
+    </form>
+</main>
+
+<div id="maintext">
+    <h2>Najnowsze Informacje</h2>
+    <p><a href="dlugieweekendy.html">Koleje Śląskie ze specjalną ofertą na długie weekendy</a></p>
+    <p><a href="maxbilet.html">Pierwszy miesiąc sprzedaży Max Biletu</a></p>
+    <p><a href="biletydlarowerow.html">Koleje Śląskie ruszają z rezerwacją miejsc dla rowerów</a></p>
+</div>
+
+    <footer>
+        <p>&copy; 2024 Koleje Śląskie. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+
+
+</body>
+</html>
+<script>
+    const errorMessage = document.getElementById('error-message');
+    const submitButton = document.querySelector('button[type="submit"]');
+    
+    submitButton.addEventListener('click', function(event) {
+        event.preventDefault(); 
+    
+        console.error('Wystąpił błąd!');
+    
+        errorMessage.classList.add('active'); 
+    
+        setTimeout(() => {
+            errorMessage.classList.remove('active');
+        }, 3000);
+    });
+    </script>

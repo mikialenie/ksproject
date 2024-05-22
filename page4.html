@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz Kontaktowy</title>
+    <link rel="stylesheet" href="stylesindex.css">
+    <link rel="stylesheet" href="stylespage4.css">
+</head>
+<body>
+    <header>
+        <h1>Formularz Kontaktowy</h1>
+        <br>
+        <nav>
+            <ul>
+                <li><a href="index2.html">Strona główna</a></li>
+                <li><a href="page1.html">Galeria Zdjęć</a></li>
+                <li><a href="page2.html">Linki Kolei</a></li>
+                <li><a href="page3.html">Kontakt</a></li>
+                <li><a href="page4.html">Formularz Kontaktowy</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        
+        <div class="page4">
+            <h2><center>Formularz kontaktowy</center></h2><br>
+            <form action="#" method="post" id="contact-form">
+                <label for="name">Imię i nazwisko:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="message">Wiadomość:</label><br>
+                <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+                <input type="submit" value="Wyślij">
+            </form>
+            <div id="success-message" class="hidden">Dziękujemy za przesłanie wiadomości!</div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Koleje Śląskie. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <script>
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+        document.getElementById("success-message").classList.remove("hidden");
+        setTimeout(function() {
+            document.getElementById("success-message").classList.add("hidden");
+        }, 3000);
+        document.getElementById("contact-form").reset(); 
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("message").value = "";
+    });
+</script>
+
+</body>
+</html>
